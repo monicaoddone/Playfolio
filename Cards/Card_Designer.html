@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playfolio — Artemisia Gentileschi</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.avatar::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  top: 15px;
+  left: 15px;
+}
+
+.avatar::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+  border-radius: 50%;
+  top: 25px;
+  right: 10px;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.archetype {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.95;
+  margin-bottom: 4px;
+}
+
+.playground {
+  font-size: 14px;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.content {
+  padding: 24px;
+}
+
+.section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+.section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #667eea;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2d3748;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyword {
+  background: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #667eea;
+  border: 1px solid #667eea;
+}
+
+.superpowers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.superpower {
+  background: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #2d3748;
+}
+
+.values-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.value {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #764ba2;
+}
+
+.synergy-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.synergy-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.synergy-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.synergy-bar {
+  width: 120px;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.synergy-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 3px;
+}
+
+.vulnerability-badge {
+  background: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #e53e3e;
+  display: inline-block;
+}
+
+.patterns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pattern-item {
+  padding-left: 16px;
+  position: relative;
+}
+
+.pattern-item::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: 700;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <div class="avatar"></div>
+    <div class="name">Artemisia Gentileschi</div>
+    <div class="archetype">The Sensemaker</div>
+    <div class="playground">Design · Prodotto Fisico/Virtuale</div>
+  </div>
+  
+  <div class="content">
+    <div class="section">
+      <div class="section-title">💬 KEYWORDS</div>
+      <div class="keywords">
+        <span class="keyword">Interprete</span>
+        <span class="keyword">Catalizzatrice</span>
+        <span class="keyword">Visionaria Sistemica</span>
+        <span class="keyword">Human-Centered</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">⚡ SUPERPOWERS</div>
+      <div class="superpowers-list">
+        <div class="superpower">🎯 Occhio a Raggi X (Empatia Profonda)</div>
+        <div class="superpower">🌉 Traduzione Interdisciplinare</div>
+        <div class="superpower">🗺️ Pensiero Sistemico</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">⚠️ VULNERABILITY</div>
+      <div class="section-content">
+        <span class="vulnerability-badge">Perfezionismo Dettagliato Iniziale</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🧭 VALUES</div>
+      <div class="values-list">
+        <span class="value">Trasparenza Etica</span>
+        <span class="value">Misurabilità</span>
+        <span class="value">Inclusività</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">✨ SIGNATURE MOVE</div>
+      <div class="section-content">
+        <strong>Trasformo l'ambiguità in percorsi chiari unendo bisogni umani e obiettivi di business, progettando esperienze che si sentono "giuste" prima di essere provate.</strong>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🎯 PROJECT IMPACT</div>
+      <div class="section-content">
+        Riprogettazione onboarding e dashboard B2B FinTech: navigazione tra requisiti normativi complessi, semplificazione radicale di flussi e riduzione del 30% nel tempo di setup + aumento customer satisfaction.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🔍 OBSERVED PATTERNS</div>
+      <div class="patterns-list">
+        <div class="pattern-item">Eccelle in fase di scoperta e definizione</div>
+        <div class="pattern-item">Richiede autonomia sul "come" con chiarezza sul "cosa"</div>
+        <div class="pattern-item">Si attiva in team interdisciplinari fiduciosi</div>
+        <div class="pattern-item">Perde energia con "design by committee"</div>
+        <div class="pattern-item">Necessita accesso costante agli utenti reali</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">🤝 SYNERGY SCORES</div>
+      <div class="synergy-grid">
+        <div class="synergy-item">
+          <span class="synergy-label">Designers</span>
+          <div class="synergy-bar"><div class="synergy-fill" style="width: 95%"></div></div>
+        </div>
+        <div class="synergy-item">
+          <span class="synergy-label">Developers</span>
+          <div class="synergy-bar"><div class="synergy-fill" style="width: 90%"></div></div>
+        </div>
+        <div class="synergy-item">
+          <span class="synergy-label">Data & AI</span>
+          <div class="synergy-bar"><div class="synergy-fill" style="width: 85%"></div></div>
+        </div>
+        <div class="synergy-item">
+          <span class="synergy-label">Managers</span>
+          <div class="synergy-bar"><div class="synergy-fill" style="width: 88%"></div></div>
+        </div>
+        <div class="synergy-item">
+          <span class="synergy-label">Marketers</span>
+          <div class="synergy-bar"><div class="synergy-fill" style="width: 82%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="border-left-color: #764ba2; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));">
+      <div class="section-title" style="color: #764ba2;">💭 MOTTO</div>
+      <div class="section-content" style="font-style: italic; font-weight: 500;">
+        "Progettiamo per l'umanità, non solo per la funzionalità"
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

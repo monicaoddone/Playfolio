@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playfolio — Michael Scott</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card {
+            background: white;
+            max-width: 480px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .avatar::before {
+            content: '🎭';
+            font-size: 40px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .archetype {
+            font-size: 16px;
+            color: rgba(255,255,255,0.95);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .playground {
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .content {
+            padding: 25px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding: 18px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #f5576c;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #f5576c;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .section-content {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+        
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .keyword {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .superpowers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .superpower {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 14px;
+            border-left: 3px solid #f093fb;
+        }
+        
+        .vulnerability-label {
+            background: #fff5f5;
+            color: #c53030;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            border: 2px dashed #fc8181;
+        }
+        
+        .values-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .value {
+            background: white;
+            color: #667eea;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 2px solid #667eea;
+        }
+        
+        .signature {
+            font-style: italic;
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.5;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #f093fb;
+        }
+        
+        .project-highlight {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+        
+        .patterns-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .pattern {
+            font-size: 14px;
+            color: #4a5568;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .pattern::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #f5576c;
+            font-weight: bold;
+        }
+        
+        .synergy-scores {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .synergy-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .synergy-label {
+            flex: 1;
+            font-size: 13px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .synergy-bar {
+            flex: 2;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .synergy-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .synergy-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #f5576c;
+            min-width: 35px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="avatar"></div>
+            <div class="name">Michael Scott</div>
+            <div class="archetype">The Orchestrator</div>
+            <div class="playground">Marketing & Communication</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <div class="section-title">✨ Keywords</div>
+                <div class="keywords">
+                    <span class="keyword">Energia contagiosa</span>
+                    <span class="keyword">Motivatore naturale</span>
+                    <span class="keyword">Connettore sociale</span>
+                    <span class="keyword">Performance oriented</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">⚡ Superpowers</div>
+                <div class="superpowers-list">
+                    <div class="superpower">Improvvisazione strategica</div>
+                    <div class="superpower">Connessione umana istantanea</div>
+                    <div class="superpower">Ottimismo indistruttibile</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🎯 Vulnerability</div>
+                <div class="vulnerability-label">Bisogno di approvazione universale</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">💎 Values</div>
+                <div class="values-list">
+                    <span class="value">Lealtà della squadra</span>
+                    <span class="value">Divertimento</span>
+                    <span class="value">Autenticità personale</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🎬 Signature Move</div>
+                <div class="signature">
+                    Trasformare ogni momento lavorativo in un'opportunità di connessione umana e spettacolo memorabile.
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🚀 Project Impact</div>
+                <div class="project-highlight">
+                    <strong>Michael Scott Paper Company:</strong> Un'impresa costruita su intuito puro, relazioni personali e capacità di reinventarsi. Ha dimostrato che il coraggio di seguire la propria visione può sfidare strutture consolidate, anche se per poco tempo.
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🔍 Observed Patterns</div>
+                <div class="patterns-list">
+                    <div class="pattern">Trasforma ogni interazione in un momento di coinvolgimento emotivo</div>
+                    <div class="pattern">Preferisce l'azione immediata alla pianificazione strutturata</div>
+                    <div class="pattern">Prospera sotto i riflettori e nelle situazioni ad alta energia</div>
+                    <div class="pattern">Fatica con procedure formali e comunicazioni asincrone</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🤝 Synergy Scores</div>
+                <div class="synergy-scores">
+                    <div class="synergy-item">
+                        <div class="synergy-label">Designers</div>
+                        <div class="synergy-bar"><div class="synergy-fill" style="width: 75%;"></div></div>
+                        <div class="synergy-value">75</div>
+                    </div>
+                    <div class="synergy-item">
+                        <div class="synergy-label">Developers</div>
+                        <div class="synergy-bar"><div class="synergy-fill" style="width: 60%;"></div></div>
+                        <div class="synergy-value">60</div>
+                    </div>
+                    <div class="synergy-item">
+                        <div class="synergy-label">Data & AI</div>
+                        <div class="synergy-bar"><div class="synergy-fill" style="width: 50%;"></div></div>
+                        <div class="synergy-value">50</div>
+                    </div>
+                    <div class="synergy-item">
+                        <div class="synergy-label">Managers</div>
+                        <div class="synergy-bar"><div class="synergy-fill" style="width: 85%;"></div></div>
+                        <div class="synergy-value">85</div>
+                    </div>
+                    <div class="synergy-item">
+                        <div class="synergy-label">Marketers</div>
+                        <div class="synergy-bar"><div class="synergy-fill" style="width: 95%;"></div></div>
+                        <div class="synergy-value">95</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>HTML Online Viewer</title></head><body style="margin: 0px;"><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;it&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Playfolio — Artemisia Gentileschi&lt;/title&gt;
+&lt;style&gt;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.avatar::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  top: 15px;
+  left: 15px;
+}
+
+.avatar::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+  border-radius: 50%;
+  top: 25px;
+  right: 10px;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.archetype {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.95;
+  margin-bottom: 4px;
+}
+
+.playground {
+  font-size: 14px;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.content {
+  padding: 24px;
+}
+
+.section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+.section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #667eea;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2d3748;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyword {
+  background: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #667eea;
+  border: 1px solid #667eea;
+}
+
+.superpowers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.superpower {
+  background: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #2d3748;
+}
+
+.values-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.value {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #764ba2;
+}
+
+.synergy-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.synergy-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.synergy-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.synergy-bar {
+  width: 120px;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.synergy-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 3px;
+}
+
+.vulnerability-badge {
+  background: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #e53e3e;
+  display: inline-block;
+}
+
+.patterns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pattern-item {
+  padding-left: 16px;
+  position: relative;
+}
+
+.pattern-item::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: 700;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;card&quot;&gt;
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;div class=&quot;avatar&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;name&quot;&gt;Artemisia Gentileschi&lt;/div&gt;
+    &lt;div class=&quot;archetype&quot;&gt;The Sensemaker&lt;/div&gt;
+    &lt;div class=&quot;playground&quot;&gt;Design · Prodotto Fisico/Virtuale&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;content&quot;&gt;
+    &lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;section-title&quot;&gt;💬 KEYWORDS&lt;/div&gt;
+      &lt;div class=&quot;keywords&quot;&gt;
+        &lt;span class=&quot;keyword&quot;&gt;Interprete&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;Catalizzatrice&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;Visionaria Sistemica&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;Human-Centered&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;section-title&quot;&gt;⚡ SUPERPOWERS&lt;/div&gt;
+      &lt;div class=&quot;superpowers-list&quot;&gt;
+        &lt;div class=&quot;superpower&quot;&gt;🎯 Occhio a Raggi X (Empatia Profonda)&lt;/div&gt;
+        &lt;div class=&quot;superpower&quot;&gt;🌉 Traduzione Interdisciplinare&lt;/div&gt;
+        &lt;div class=&quot;superpower&quot;&gt;🗺️ Pensiero Sistemico&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;section-title&quot;&gt;⚠️ VULNERABILITY&lt;/div&gt;
+      &lt;div class=&quot;section-content&quot;&gt;
+        &lt;span class=&quot;vulnerability-badge&quot;&gt;Perfezionismo Dettagliato Iniziale&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;section-title&quot;&gt;🧭 VALUES&lt;/div&gt;
+      &lt;div class=&quot;values-list&quot;&gt;
+        &lt;span class=&quot;value&quot;&gt;Trasparenza Etica&lt;/span&gt;
+        &lt;span class=&quot;value&quot;&gt;Misurabilità&lt;/span&gt;
+        &lt;span class=&quot;value&quot;&gt;Inclusività&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;section-title&quot;&gt;✨ SIGNATURE MOVE&lt;/div&gt;
+      &lt;div class=&quot;section-content&quot;&gt;
+        &lt;strong&gt;Trasformo l'ambiguità in percorsi chiari unendo bisogni umani e obiettivi di business, progettando esperienze che si sentono &quot;giuste&quot; prima di essere provate.&lt;/strong&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;section-title&quot;&gt;🎯 PROJECT IMPACT&lt;/div&gt;
+      &lt;div class=&quot;section-content&quot;&gt;
+        Riprogettazione onboarding e dashboard B2B FinTech: navigazione tra requisiti normativi complessi, semplificazione radicale di flussi e riduzione del 30% nel tempo di setup + aumento customer satisfaction.
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;section-title&quot;&gt;🔍 OBSERVED PATTERNS&lt;/div&gt;
+      &lt;div class=&quot;patterns-list&quot;&gt;
+        &lt;div class=&quot;pattern-item&quot;&gt;Eccelle in fase di scoperta e definizione&lt;/div&gt;
+        &lt;div class=&quot;pattern-item&quot;&gt;Richiede autonomia sul &quot;come&quot; con chiarezza sul &quot;cosa&quot;&lt;/div&gt;
+        &lt;div class=&quot;pattern-item&quot;&gt;Si attiva in team interdisciplinari fiduciosi&lt;/div&gt;
+        &lt;div class=&quot;pattern-item&quot;&gt;Perde energia con &quot;design by committee&quot;&lt;/div&gt;
+        &lt;div class=&quot;pattern-item&quot;&gt;Necessita accesso costante agli utenti reali&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;section&quot;&gt;
+      &lt;div class=&quot;section-title&quot;&gt;🤝 SYNERGY SCORES&lt;/div&gt;
+      &lt;div class=&quot;synergy-grid&quot;&gt;
+        &lt;div class=&quot;synergy-item&quot;&gt;
+          &lt;span class=&quot;synergy-label&quot;&gt;Designers&lt;/span&gt;
+          &lt;div class=&quot;synergy-bar&quot;&gt;&lt;div class=&quot;synergy-fill&quot; style=&quot;width: 95%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;synergy-item&quot;&gt;
+          &lt;span class=&quot;synergy-label&quot;&gt;Developers&lt;/span&gt;
+          &lt;div class=&quot;synergy-bar&quot;&gt;&lt;div class=&quot;synergy-fill&quot; style=&quot;width: 90%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;synergy-item&quot;&gt;
+          &lt;span class=&quot;synergy-label&quot;&gt;Data &amp; AI&lt;/span&gt;
+          &lt;div class=&quot;synergy-bar&quot;&gt;&lt;div class=&quot;synergy-fill&quot; style=&quot;width: 85%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;synergy-item&quot;&gt;
+          &lt;span class=&quot;synergy-label&quot;&gt;Managers&lt;/span&gt;
+          &lt;div class=&quot;synergy-bar&quot;&gt;&lt;div class=&quot;synergy-fill&quot; style=&quot;width: 88%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;synergy-item&quot;&gt;
+          &lt;span class=&quot;synergy-label&quot;&gt;Marketers&lt;/span&gt;
+          &lt;div class=&quot;synergy-bar&quot;&gt;&lt;div class=&quot;synergy-fill&quot; style=&quot;width: 82%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;section&quot; style=&quot;border-left-color: #764ba2; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));&quot;&gt;
+      &lt;div class=&quot;section-title&quot; style=&quot;color: #764ba2;&quot;&gt;💭 MOTTO&lt;/div&gt;
+      &lt;div class=&quot;section-content&quot; style=&quot;font-style: italic; font-weight: 500;&quot;&gt;
+        &quot;Progettiamo per l'umanità, non solo per la funzionalità&quot;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;" style="border: medium; width: 100%; height: 100%;" title="HTML Online Viewer"></iframe></body></html>

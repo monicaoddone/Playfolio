@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playfolio — Elliot Alderson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,212,255,0.3);
+        }
+        
+        .avatar::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            top: 20px;
+            left: 25px;
+        }
+        
+        .avatar::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            background: #fff;
+            border-radius: 25px 25px 0 0;
+            bottom: 10px;
+            left: 15px;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .archetype {
+            font-size: 16px;
+            color: #00d4ff;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .playground {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .content {
+            padding: 24px;
+        }
+        
+        .section {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .section-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+        
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .keyword {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .superpower {
+            background: white;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a2e;
+            border-left: 3px solid #00d4ff;
+        }
+        
+        .superpower:last-child {
+            margin-bottom: 0;
+        }
+        
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .value {
+            background: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #667eea;
+            font-size: 13px;
+        }
+        
+        .signature {
+            font-style: italic;
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        .pattern-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .pattern-item::before {
+            content: '→';
+            margin-right: 8px;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .synergy-grid {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .synergy-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 10px 12px;
+            border-radius: 8px;
+        }
+        
+        .synergy-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .synergy-score {
+            font-size: 16px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .vulnerability-badge {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            border-left: 3px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="avatar"></div>
+            <div class="name">Elliot Alderson</div>
+            <div class="archetype">The Crafter</div>
+            <div class="playground">Coding</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <div class="section-title">🏷️ Keywords</div>
+                <div class="keywords">
+                    <span class="keyword">Full-Stack</span>
+                    <span class="keyword">Architetture Solide</span>
+                    <span class="keyword">Leggibilità</span>
+                    <span class="keyword">Problemi Reali</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">⚡ Superpoteri</div>
+                <div class="superpower">Pattern Recognition</div>
+                <div class="superpower">Ottimizzazione Chirurgica</div>
+                <div class="superpower">Traduzione Design-Tech</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">⚠️ Vulnerabilità</div>
+                <div class="vulnerability-badge">Perfezionismo Cronico</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🧭 Valori</div>
+                <div class="values">
+                    <span class="value">Libertà</span>
+                    <span class="value">Indipendenza</span>
+                    <span class="value">Innovazione</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">✨ Signature Move</div>
+                <div class="signature">"Dimezzo la complessità senza scendere a compromessi sul risultato."</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🎯 Project Impact</div>
+                <div class="section-content">
+                    Risoluzione bug critici su piattaforma e-commerce con impatto diretto: +20% conversioni. Intervento mirato su architettura esistente senza refactoring totale.
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🔍 Pattern Osservati</div>
+                <div class="pattern-item">Equilibrio tra hack veloci e solidità strutturale</div>
+                <div class="pattern-item">Priorità su leggibilità e manutenibilità del codice</div>
+                <div class="pattern-item">Approccio pragmatico: tecnologia come mezzo, non fine</div>
+                <div class="pattern-item">Attenzione al lavoro di chi viene dopo</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🤝 Synergy Score</div>
+                <div class="synergy-grid">
+                    <div class="synergy-item">
+                        <span class="synergy-label">Designer</span>
+                        <span class="synergy-score">90</span>
+                    </div>
+                    <div class="synergy-item">
+                        <span class="synergy-label">Developer</span>
+                        <span class="synergy-score">85</span>
+                    </div>
+                    <div class="synergy-item">
+                        <span class="synergy-label">Data & AI</span>
+                        <span class="synergy-score">75</span>
+                    </div>
+                    <div class="synergy-item">
+                        <span class="synergy-label">Manager</span>
+                        <span class="synergy-score">65</span>
+                    </div>
+                    <div class="synergy-item">
+                        <span class="synergy-label">Marketer</span>
+                        <span class="synergy-score">70</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
